@@ -1,0 +1,37 @@
+---
+---
+
+<div class="chat">
+  <div class="messages" id="messages">
+    <div id="empty-state" class="empty-state">
+      Ask a question about your reading…
+    </div>
+  </div>
+
+  <div id="thinking" class="htmx-indicator">Thinking…</div>
+
+  <form
+    id="chat-form"
+    hx-post="/api/chat"
+    hx-target="#messages"
+    hx-swap="beforeend"
+    hx-indicator="#thinking"
+    hx-on::before-request="this.querySelector('[name=message]').value = ''"
+  >
+    <input type="hidden" name="context" id="reader-context" value="" />
+    <input type="hidden" name="history" id="message-history" value="[]" />
+    <div class="chat-bar">
+      <input
+        type="text"
+        name="message"
+        placeholder="Ask about your reading…"
+        required
+        autocomplete="off"
+      />
+      <button type="submit">
+        <span class="btn-label">Send</span>
+        <span class="htmx-indicator">⏳</span>
+      </button>
+    </div>
+  </form>
+</div>

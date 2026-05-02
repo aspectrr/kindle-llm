@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Reader from '../components/Reader.astro';
+import Chat from '../components/Chat.astro';
+---
+
+<Layout>
+  <header class="header">
+    <h1>kindle-llm</h1>
+    <div class="header-actions">
+      <button onclick="clearChat()">Clear</button>
+    </div>
+  </header>
+
+  <Reader />
+
+  <div class="divider">
+    <button id="toggle-btn" onclick="toggleReader()">△ Reading</button>
+  </div>
+
+  <Chat />
+</Layout>
