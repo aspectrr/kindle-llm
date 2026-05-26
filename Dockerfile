@@ -3,6 +3,8 @@ WORKDIR /app
 COPY package.json bun.lock* ./
 RUN bun install --frozen-lockfile
 COPY . .
+ARG SITE_URL=http://localhost:3000
+ENV SITE_URL=$SITE_URL
 RUN bun run build
 
 FROM oven/bun:1 AS runner

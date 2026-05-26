@@ -4,6 +4,9 @@ primary_region = "sjc"
 [build]
 dockerfile = "Dockerfile"
 
+[build.args]
+SITE_URL = "https://kindle-llm.fly.dev"
+
 [env]
 PORT = "3000"
 

@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+.git
+.pi
+.pi-lens
+.astro
