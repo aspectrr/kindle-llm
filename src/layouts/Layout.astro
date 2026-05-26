@@ -273,6 +273,7 @@ const { title = 'kindle-llm' } = Astro.props;
 
       /* htmx states */
       .htmx-indicator { display: none; }
+      .htmx-request.htmx-indicator { display: inline; }
       .htmx-request .htmx-indicator { display: inline; }
       .htmx-request .btn-label { display: none; }
 
@@ -293,7 +294,7 @@ const { title = 'kindle-llm' } = Astro.props;
         font-style: italic;
       }
     </style>
-    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-0o0NrxS//lO6CcbCpEpjUus4SvpHnb1c1G0Y4NU3S9DcT4TFQkV1yOk7bzbBQt13" crossorigin="anonymous"></script>
+    <script is:inline src="https://unpkg.com/htmx.org@1.9.12"></script>
   </head>
   <body>
     <div class="app">
