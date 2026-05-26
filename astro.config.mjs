@@ -7,5 +7,7 @@ export default defineConfig({
 	site: siteUrl,
 	output: "server",
 	adapter: node({ mode: "standalone" }),
-
+	security: {
+		checkOrigin: false,
+	},
 });
